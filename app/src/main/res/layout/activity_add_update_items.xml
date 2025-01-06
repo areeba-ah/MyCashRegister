@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Add_Update_Items">
+
+<!-- Top App Bar -->
+<com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/topAppBar"
+    android:layout_width="0dp"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    app:title="My Cash Register"
+    app:titleTextColor="?attr/colorOnPrimary"
+    app:menu="@menu/top_app_bar_menu"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_margin="22dp"
+    android:paddingTop="20dp"
+    android:orientation="vertical"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/topAppBar"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_name"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textSize="18sp"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="14dp"
+        android:hint="@string/enter_product_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unit_price"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_marginTop="14dp"
+        android:textSize="18sp"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedPriceInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="14dp"
+        android:hint="@string/enter_unit_price"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/productPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:id="@+id/availableQuantityLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceLayout">
+
+        <TextView
+            android:id="@+id/availableQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/available_quantity"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/availableProductQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/availableQuantity"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginVertical="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/availableQuantityLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_1"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_2"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_toEndOf="@+id/one"/>
+
+            <Button
+                android:id="@+id/three"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_3"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_toEndOf="@+id/two"/>
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@+id/three"
+                android:text="@string/clear"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/four"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_4"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:id="@+id/five"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_5"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_toEndOf="@+id/four"/>
+
+            <Button
+                android:id="@+id/six"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_6"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_toEndOf="@+id/five"/>
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@+id/six"
+                android:text="@string/delete"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_7"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_8"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_toEndOf="@+id/seven"/>
+
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/_9"
+                android:backgroundTint="@color/custom_number_btn"
+                android:layout_toEndOf="@+id/eight"/>
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@+id/nine"
+                android:backgroundTint="@color/custom_number_btn"
+                android:text="@string/_0"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="14dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/buttons">
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:textAllCaps="true"
+                android:backgroundTint="@color/cancel_btn"
+                android:text="@string/cancel"/>
+
+            <Button
+                android:id="@+id/updateBtn"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                app:cornerRadius="0dp"
+                android:layout_margin="8dp"
+                android:text="@string/update"
+                android:textAllCaps="true"
+                android:backgroundTint="@color/buy_btn"
+                android:layout_toEndOf="@+id/cancelBtn"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

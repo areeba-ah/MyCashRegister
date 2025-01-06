@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_button"
+        android:icon="@drawable/baseline_login_24"
+        android:title="@string/manager"
+        android:iconTint="@color/white"
+        android:contentDescription="@string/manager"
+        app:showAsAction="always"
+        android:tooltipText="@string/manager"/>
+</menu>
