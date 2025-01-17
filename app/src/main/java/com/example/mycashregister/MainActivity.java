@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -86,16 +87,19 @@ public class MainActivity extends AppCompatActivity {
         // Convert items to string list for the adapter
         List<String> itemsStringList = new ArrayList<>();
 
-        if (updatedItems != null) {
-            noText.setText(""); // Clear "No items" text
+        if (updatedItems != null && !updatedItems.isEmpty()) {
+            noText.setVisibility(View.GONE); // Hide "No items" text
             for (Items item : updatedItems) {
                 itemsStringList.add(item.toStringUser());
                 Log.d("UpdatedItems", "Name: " + item.productName + ", Price: " + item.productPrice + ", Qty: " + item.productQty);
             }
         } else {
-            noText.setText(R.string.no_item_available); // Set "No items" text
+            noText.setVisibility(View.VISIBLE); // Show "No items" text
+            noText.setText(R.string.no_item_available);
             Log.e("Update", "Items list is null");
         }
+
+
 
         // Set up ArrayAdapter
         adapter = new ArrayAdapter<>(

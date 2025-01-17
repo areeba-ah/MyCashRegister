@@ -61,13 +61,14 @@ public class PurchaseHistory extends AppCompatActivity {
         // Convert items to string list for the adapter
         List<String> itemsStringList = new ArrayList<>();
 
-        if (loadHistory != null) {
+        if (loadHistory != null && !loadHistory.isEmpty()) {
             for (History item : loadHistory) {
-                noText.setText("");
+                noText.setVisibility(View.GONE); // Hide "No items" text
                 itemsStringList.add(item.toString());
                 Log.d("UpdatedItems", "Name: " + item.productName + ", Price: " + item.productPrice + ", Qty: " + item.quantityPurchased);
             }
         } else {
+            noText.setVisibility(View.VISIBLE); // Show "No items" text
             noText.setText(R.string.no_purchase_history_available);
             Log.e("Update", "Items list is null");
             return;

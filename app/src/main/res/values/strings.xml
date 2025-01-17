@@ -19,7 +19,7 @@
     <string name="cancel">Cancel</string>
     <string name="buy">Buy</string>
     <string name="available_quantity">Available Quantity:</string>
-    <string name="no_item_available">No Item Available</string>
+    <string name="no_item_available">No Item Available, Please add item through the manager portal!</string>
     <string name="inventory">Inventory</string>
     <string name="manager">Manager</string>
     <string name="add_button">Add Button</string>
@@ -36,7 +36,7 @@
     <string name="purchase_history">Purchase History</string>
     <string name="back_button">Back Button</string>
     <string name="histoty_button">Histoty Button</string>
-    <string name="no_purchase_history_available">No Purchase History Available</string>
+    <string name="no_purchase_history_available">No Purchase History Available!</string>
     <string name="quantity_required">Quantity Required!</string>
     <string name="managerLogin">Manager Login</string>
 </resources>
